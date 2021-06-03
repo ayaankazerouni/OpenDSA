@@ -28,6 +28,17 @@
         "top": 5,
         "constructor": 9
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/AStack.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: AStack1 *** */",
+      "endBefore": "# /* *** ODSAendTag: AStack1 *** */",
+      "tags": {
+        "sig": 2,
+        "top": 5,
+        "constructor": 9
+      }
     }]
   }
 }

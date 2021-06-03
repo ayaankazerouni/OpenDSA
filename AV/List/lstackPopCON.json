@@ -37,6 +37,20 @@
         "size": 5,
         "return": 6
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/LStack.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: LStackPop *** */",
+      "endBefore": "# /* *** ODSAendTag: LStackPop *** */",
+      "tags": {
+        "sig": 1,
+        "null": 2,
+        "it": 3,
+        "top": 4,
+        "size": 5,
+        "return": 6
+      }
     }]
   }
 }

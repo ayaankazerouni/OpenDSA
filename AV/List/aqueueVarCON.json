@@ -34,6 +34,19 @@
         "varmaxsize": 3,
         "varrear": 5
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/AQueue.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: AQueue1 *** */",
+      "endBefore": "# /* *** ODSAendTag: AQueue1 *** */",
+      "tags": {
+        "array": 6,
+        "constructor": 9,
+        "setmaxsize": 10,
+        "varmaxsize": 3,
+        "varrear": 5
+      }
     }]
   }
 }

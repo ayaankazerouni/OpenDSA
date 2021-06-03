@@ -38,6 +38,20 @@
         "endcheck": 6,
         "return": 7
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/LQueue.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: LQueueDequeue *** */",
+      "endBefore": "# /* *** ODSAendTag: LQueueDequeue *** */",
+      "tags": {
+        "sig": 2,
+        "empty": 3,
+        "copy": 4,
+        "setNext": 5,
+        "endcheck": 6,
+        "return": 7
+      }
     }]
   }
 }

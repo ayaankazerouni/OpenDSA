@@ -45,6 +45,20 @@
         "tail": 5,
         "listSize": 6
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/LList.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: LListInsert *** */",
+      "endBefore": "# /* *** ODSAendTag: LListInsert *** */",
+      "tags": {
+        "sig": 2,
+        "setnext": 3,
+        "setelem": 4,
+        "tail": 5,
+        "listSize": 6
+      }
     }]
+
   }
 }

@@ -48,6 +48,19 @@
         "insert": 6,
         "incr": 7
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/AList.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: AListInsert *** */",
+      "endBefore": "# /* *** ODSAendTag: AListInsert *** */",
+      "tags": {
+        "sig": 2,
+        "for": 4,
+        "forbody": 5,
+        "insert": 6,
+        "incr": 7
+      }
     }]
   }
 }

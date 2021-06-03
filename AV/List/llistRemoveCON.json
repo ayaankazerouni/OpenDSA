@@ -39,6 +39,21 @@
         "listSize": 8,
         "return": 9
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/LList.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: LListRemove *** */",
+      "endBefore": "# /* *** ODSAendTag: LListRemove *** */",
+      "tags": {
+        "sig": 2,
+        "remember": 4,
+        "setelem": 5,
+        "setnext": 7,
+        "listSize": 8,
+        "return": 9
+      }
     }]
+
   }
 }

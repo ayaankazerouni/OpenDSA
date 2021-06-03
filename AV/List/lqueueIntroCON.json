@@ -27,6 +27,16 @@
         "vars": [3, 4],
         "init": [11, 12, 13, 14, 15]
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/LQueue.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: LQueue1 *** */",
+      "endBefore": "# /* *** ODSAendTag: LQueue1 *** */",
+      "tags": {
+        "vars": [3, 4],
+        "init": [11, 12, 13, 14, 15]
+      }
     }]
   }
 }

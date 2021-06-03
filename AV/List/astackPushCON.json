@@ -29,6 +29,17 @@
         "full": 2,
         "copy": 3
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/AStack.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: AStackPush *** */",
+      "endBefore": "# /* *** ODSAendTag: AStackPush *** */",
+      "tags": {
+        "sig": 1,
+        "full": 2,
+        "copy": 3
+      }
     }]
   }
 }

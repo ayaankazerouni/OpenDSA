@@ -63,6 +63,31 @@
         "sig": 2,
         "for": 5
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/LList.py",
+      "startAfter": "# /* *** ODSATag: LListNext *** */",
+      "endBefore": "# /* *** ODSAendTag: LListNext *** */",
+      "tags": {
+        "sig": 2
+      }
+    }, {
+      "url": "../../../SourceCode/Python/Lists/LList.py",
+      "startAfter": "# /* *** ODSATag: LListPrev *** */",
+      "endBefore": "# /* *** ODSAendTag: LListPrev *** */",
+      "tags": {
+        "sig": 2,
+        "while": 6,
+        "curr": 7
+      }
+    }, {
+      "url": "../../../SourceCode/Python/Lists/LList.py",
+      "startAfter": "# /* *** ODSATag: LListPos *** */",
+      "endBefore": "# /* *** ODSAendTag: LListPos *** */",
+      "tags": {
+        "sig": 2,
+        "for": 5
+      }
     }]
   }
 }

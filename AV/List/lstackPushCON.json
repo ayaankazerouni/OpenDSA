@@ -31,6 +31,17 @@
         "new": 2,
         "size": 3
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/LStack.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: LStackPush *** */",
+      "endBefore": "# /* *** ODSAendTag: LStackPush *** */",
+      "tags": {
+        "sig": 1,
+        "new": 2,
+        "size": 3
+      }
     }]
   }
 }
