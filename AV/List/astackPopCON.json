@@ -16,7 +16,7 @@
       "tags": {
         "sig": 1,
         "empty": 2,
-        "return": 3
+        "return": 5
       }
     }],
     "java": [{

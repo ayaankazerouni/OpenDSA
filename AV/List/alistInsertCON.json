@@ -57,9 +57,9 @@
       "tags": {
         "sig": 2,
         "for": 4,
-        "forbody": 5,
-        "insert": 6,
-        "incr": 7
+        "forbody": 8,
+        "insert": 9,
+        "incr": 10
       }
     }]
   }

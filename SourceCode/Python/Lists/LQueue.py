@@ -1,59 +1,72 @@
-# /* *** ODSATag: LQueue1 *** */
 from Link import *
+from Queue import *
+# /* *** ODSATag: LQueue1 *** */
 # Linked queue implementation
 class LQueue(Queue):
-    # Constructors
-    def __init__(self):
-        self.front = self.rear = Link(None)
-        self.size = 0
+    # Class variables
+    #   Link front  // Pointed to front queue node
+    #   Link rear   // Pointer to rear queue node
+    #   int size    // Number of elements in queue
 
-    def __init__(self, size):                           # Ignores Size
+    # Constructor
+    def __init__(self, size=0): # Ignores Size
         self.front = self.rear = Link(None)
         self.size = 0
 # /* *** ODSAendTag: LQueue1 *** */
-    
-    def clear(self):                                    # Reinitialize queue
+   
+    # Reinitialize queue
+    def clear(self):
         self.front = self.rear = Link(None)
         self.size = 0
 
+    def __eq__(self, other):
+        return (isinstance(other, LQueue) and self.size == other.size and 
+                self.rear == other.rear and self.front == other.front)
+    
     def __repr__(self):
         out = ""
         temp = self.front.next()
         while temp != None:
-            out.append(temp.element())
-            out.append(" ")
+            out += str(temp.element())
+            out += " "
             temp = temp.next()
         return out
 # /* *** ODSATag: LQueue2 *** */
 
 # /* *** ODSATag: LQueueEnqueue *** */
-    def enqueue(self, it):                              # Put element on rear
-        self.rear.setNext(Link(it, None))
+    
+    # Put element on rear
+    def enqueue(self, it):
+        self.rear.setNext(Link(None, it))
         self.rear = self.rear.next()
         self.size += 1
         return True
 # /* *** ODSAendTag: LQueueEnqueue *** */
 
 # /* *** ODSATag: LQueueDequeue *** */
-    def dequeue(self):                                  # Remove and return element from front
+    # Remove and return element from front
+    def dequeue(self):
         if self.size == 0:
             return None
         it = self.front.next().element()                # Store the value
         self.front.setNext(self.front.next().next())    # Advance front
         if self.front.next() == None:                   # Last element
             self.rear = self.front
-        size -= 1
+        self.size -= 1
         return it                                       # Return element
 # /* *** ODSAendTag: LQueueDequeue *** */
 
-    def frontValue(self):                               # Return front element
+    # Return front element
+    def frontValue(self):
         if self.size == 0:
             return None
         return self.front.next().element()
 
-    def length(self):                                   # Return queue size
+    # Return queue size
+    def length(self):
         return self.size
 
-    def isEmpty(self):                                  # Check if the queue is empty
+    # Check if the queue is empty
+    def isEmpty(self):
         return (self.size == 0)
 # /* *** ODSAendTag: LQueue2 *** */

@@ -47,10 +47,10 @@
       "tags": {
         "sig": 2,
         "empty": 3,
-        "copy": 4,
-        "setNext": 5,
-        "endcheck": 6,
-        "return": 7
+        "copy": 5,
+        "setNext": 6,
+        "endcheck": 7,
+        "return": 10
       }
     }]
   }

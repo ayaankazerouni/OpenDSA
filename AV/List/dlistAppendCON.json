@@ -35,6 +35,18 @@
         "setNext": 3,
         "size": 5
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/DList.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: DListAppend *** */",
+      "endBefore": "# /* *** ODSAendTag: DListAppend *** */",
+      "tags": {
+        "sig": 1,
+        "setPrev": 2,
+        "setNext": 3,
+        "size": 6
+      }
     }]
   }
 }

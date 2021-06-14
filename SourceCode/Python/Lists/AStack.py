@@ -1,6 +1,6 @@
 from Stack import *
-# Array-based stack implementation
 # /* *** ODSATag: AStack1 *** */
+# Array-based stack implementation
 class AStack(Stack):
 
     DEFAULT_SIZE = 10
@@ -12,13 +12,16 @@ class AStack(Stack):
         self.stackArray = []    # Array holding stack
 # /* *** ODSAendTag: AStack1 *** */    
 
+    def __eq__(self, other):
+        return (isinstance(other, AStack) and self.maxSize == other.maxSize and 
+                self.top == other.top and self.stackArray == other.stackArray)
+    
     def __repr__(self):
         out = ""
-        i = self.top-1
-        while i >= 0:
-            out.append(stackArray[i])
-            out.append(" ")
-            i--
+        for i in reversed(range(self.top)):
+            out += str(self.stackArray[i])
+            if i != 0:
+                out += "\n"
         return out
 # /* *** ODSATag: AStack2 *** */
 
@@ -26,18 +29,18 @@ class AStack(Stack):
     def clear(self):
         self.top = 0
     
+# Push "it" onto stack
 # /* *** ODSATag: AStackPush *** */
-    # Push "it" onto stack
     def push(self, it):
         if self.top >= self.maxSize:
             return False
-        self.stackArray[self.top]
+        self.stackArray.insert(self.top, it)
         self.top += 1
         return True
 # /* *** ODSAendTag: AStackPush *** */
 
+# Remove and return top element
 # /* *** ODSATag: AStackPop *** */
-    # Remove and return top element
     def pop(self):
         if self.top == 0:
             return None
@@ -50,7 +53,7 @@ class AStack(Stack):
         if self.top == 0:
             return None
         return self.stackArray[self.top-1]
-    
+
     # Return stack size
     def length(self):
         return self.top

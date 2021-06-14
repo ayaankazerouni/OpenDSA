@@ -1,48 +1,63 @@
 # /* *** ODSATag: ListADT *** */
 # /* *** ODSATag: ListADT1 *** */
-class List:                             # List class ADT
-    def clear(self):                    # Remove all contents from the list, so it is once again empty
+# List class ADT
+class List:
+    # Remove all contents from the list, so it is once again empty
+    def clear(self):
+        pass
+    
+    # Insert "it" at the current location
+    # The client must ensure that the list's capacity is not exceeded 
+    def insert(self, it):               
         pass
 
-    def insert(self, it):               # Insert "it" at the current location
-        pass                            # The client must ensure that the list's capacity is not exceeded
+    # Append "it" at the end of the list
+    # The client must ensure that the list's capacity is not exceeded
+    def append(self, it):
+        pass
 
-    def append(self, it):               # Append "it" at the end of the list
-        pass                            # The client must ensure that the list's capacity is not exceeded
-
-    def remove(self):                   # Remove and return the current element
+    # Remove and return the current element
+    def remove(self):                   
         pass
 # /* *** ODSAendTag: ListADT1 *** */
 
 # /* *** ODSAendTag: ListADT2 *** */
-    def moveToStart(self):              # Set the current position to the start of the list
+    # Set the current position to the start of the list
+    def moveToStart(self):              
         pass
 
-    def moveToEnd(self):                # Set the current position to the end of the list
+    # Set the current position to the end of the list
+    def moveToEnd(self):                
         pass
 
-    def prev(self):                     # Move the current position one step left, no change if already at beginning
+    # Move the current position one step left, no change if already at beginning
+    def prev(self):                     
         pass
 
-    def next(self):                     # Move the current position one step right, no change if already at end
+    # Move the current position one step right, no change if already at end
+    def next(self):                     
         pass
 
-    def length(self):                   # Return the number of elements in the list
+    # Return the number of elements in the list
+    def length(self):                   
         pass
 # /* *** ODSAendTag: ListADT2 *** */
 
 # /* *** ODSATag: ListADT3 *** */
-
-    def currPos(self):                  # Return the position of the current element
+    # Return the position of the current element
+    def currPos(self):                  
         pass
 
-    def moveToPos(self, pos):           # Set the current position to "pos"
+    # Set the current position to "pos"
+    def moveToPos(self, pos):           
         pass
 
-    def isAtEnd(self):                  # Return True if current position is at end of the list
+    # Return True if current position is at end of the list
+    def isAtEnd(self):                  
         pass
 
-    def getValue(self):                 # Return the current element
+    # Return the current element
+    def getValue(self):                 
         pass
 
     def isEmpty(self):

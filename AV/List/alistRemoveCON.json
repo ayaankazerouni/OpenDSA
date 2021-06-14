@@ -60,10 +60,10 @@
       "tags": {
         "sig": 2,
         "copy": 5,
-        "for": 6,
-        "forbody": 7,
-        "dec": 8,
-        "return": 9
+        "for": 8,
+        "forbody": 9,
+        "dec": 10,
+        "return": 11
       }
     }]
   }

@@ -1,14 +1,10 @@
 # /* *** ODSATag: Link *** */
 class Link:
     #Constructors
-    def __init__(self, it, inn):    # Singly linked list node class
-        self.e = it                 # Value for this node
-        self.n = inn                # Point to next node in list
+    def __init__(self, inn, it=None):   # Singly linked list node class
+        self.e = it                     # Value for this node
+        self.n = inn                    # Point to next node in list
     
-    def __init__(self, inn):
-        self.e = None
-        self.n = inn
-
     def element(self):              # Return the value
         return self.e
 

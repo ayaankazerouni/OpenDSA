@@ -33,6 +33,17 @@
         "headcheck": 2,
         "curr": 3
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/DList.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: DListPrev *** */",
+      "endBefore": "# /* *** ODSAendTag: DListPrev *** */",
+      "tags": {
+        "sig": 1,
+        "headcheck": 2,
+        "curr": 3
+      }
     }]
   }
 }

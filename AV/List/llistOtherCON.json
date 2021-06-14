@@ -77,8 +77,8 @@
       "endBefore": "# /* *** ODSAendTag: LListPrev *** */",
       "tags": {
         "sig": 2,
-        "while": 6,
-        "curr": 7
+        "while": 7,
+        "curr": 9
       }
     }, {
       "url": "../../../SourceCode/Python/Lists/LList.py",
@@ -86,7 +86,7 @@
       "endBefore": "# /* *** ODSAendTag: LListPos *** */",
       "tags": {
         "sig": 2,
-        "for": 5
+        "for": 7
       }
     }]
   }

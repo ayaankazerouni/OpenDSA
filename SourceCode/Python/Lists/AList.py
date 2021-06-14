@@ -1,7 +1,7 @@
 from List import *
 # /* *** ODSATag: AList *** */
 # Array-based list implementation
-# /* ODSATag: AListVars *** */
+# /* *** ODSATag: AListVars *** */
 class AList(List):
     # listArray         Array holding list elements
     # DEFAULT_SIZE      Default size
@@ -11,20 +11,23 @@ class AList(List):
 # /* *** ODSAendTag: AListVars *** */
     DEFAULT_SIZE = 10
 # /* *** ODSATag: Constructors *** */
-    # Constructors
+    # Constructor
     # Create a new list object with maximum size "size"
-    def __init__(self, size):
+    def __init__(self, size=DEFAULT_SIZE):
         self.maxSize = size
         self.listSize = self.curr = 0
         self.listArray = []             # Create listArray
-
-    def __init__(self):
-        self.maxSize = DEFAULT_SIZE
-        self.listSize = self.curr = 0
-        self.listArray = []
 # /* *** ODSAendTag: Constructors *** */
+
+    def __eq__(self, other):
+        return (isinstance(other, AList) and self.maxSize == other.maxSize and 
+                self.curr == other.curr and self.listSize == other.listSize and self.listArray == other.listArray)
+
+    def __repr__(self):
+        return ("Max size: " + str(self.maxSize) + "\nList size: " + str(self.listSize) + "\nCurrent position: " + str(self.curr) + "\nArray list: " + str(self.listArray))
     
-    def clear():                        # Reinitialize the list
+    # Reinitialize the list
+    def clear(self): 
         self.listSize = self.curr = 0   # Simply reinitialize values
 
 # /* *** ODSATag: AListInsert *** */
@@ -32,48 +35,69 @@ class AList(List):
     def insert(self, it):
         if self.listSize >= self.maxSize:
             return False
-        i = self.listSize
-        while i > self.curr:
+        #self.listArray.append(None)
+        #i = self.listSize
+        self.listArray.append(None)
+        for i in range(self.listSize, self.curr, -1):
+        #while i > self.curr:
             self.listArray[i] = self.listArray[i-1] # Makes room for insertion
-            i -= 1  # Shifts element up
+            #i -= 1  # Shifts element up
         self.listArray[self.curr] = it
         self.listSize += 1  # Increment list size
         return True
 # /* *** ODSAendTag: AListInsert *** */
 
+# /* *** ODSATag: AListAppend *** */
+    # Append "it" to list
+    def append(self, it):
+        if self.listSize >= self.maxSize:
+            return False
+        self.listArray.insert(self.listSize, it)
+        self.listSize += 1
+        return True
+# /* *** ODSAendTag: AListAppend *** */
+
 # /* *** ODSATag: AListRemove *** */
     # Remove and return the current element
     def remove(self):
         if (self.curr < 0) or (self.curr >= self.listSize): # No current element
-            raise IndexError("remove() in AList has a current of " + self.curr + " and size of " + self.listSize + " that is not a valid element")
+            raise IndexError("remove() in AList has a current of " + str(self.curr) + " and size of " + str(self.listSize) + " that is not a valid element")
         it = self.listArray[self.curr]
-        i = self.curr
-        while i < self.listSize - 1:
+        #i = self.curr
+        #while i < self.listSize - 1:
+        for i in range(self.curr, self.listSize-1):
             self.listArray[i] = self.listArray[i+1]
-            i += 1
+            #i += 1
+        self.listArray.pop(self.listSize-1)
         self.listSize -= 1
         return it
 # /* *** ODSAendTag: AListRemove *** */
 
-    def moveToStart(self):  # Set to front
+    # Set to front
+    def moveToStart(self):
         self.curr = 0
 
-    def moveToEnd(self):    # Set to end
-        self.curr = self.listSize
+    # Set to end
+    def moveToEnd(self):
+        self.curr = self.listSize-1
 
-    def prev(self):         # Move left
+    # Move left
+    def prev(self):
         if self.curr != 0:
             self.curr -= 1
 
-    def next(self):         # Move right
+    # Move right
+    def next(self):
         if self.curr < self.listSize:
             self.curr += 1
 
-    def length(self):       # Return list size
+    # Return list size
+    def length(self):
         return self.listSize
 
+    # Return current position
     def currPos(self):
-        return self.curr    # Return current position
+        return self.curr
 
     # Set current list position to "pos"
     def moveToPos(self, pos):
@@ -84,7 +108,7 @@ class AList(List):
 
     # Return true if current position is at end of the list
     def isAtEnd(self):
-        return self.curr == self.listSize
+        return self.curr == self.listSize-1
 
     # Return the current element
     def getValue(self):

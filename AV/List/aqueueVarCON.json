@@ -41,11 +41,11 @@
       "startAfter": "# /* *** ODSATag: AQueue1 *** */",
       "endBefore": "# /* *** ODSAendTag: AQueue1 *** */",
       "tags": {
-        "array": 6,
-        "constructor": 9,
-        "setmaxsize": 10,
+        "array": 8,
+        "constructor": 4,
+        "setmaxsize": 5,
         "varmaxsize": 3,
-        "varrear": 5
+        "varrear": 6
       }
     }]
   }

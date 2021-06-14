@@ -47,11 +47,11 @@
       "endBefore": "# /* *** ODSAendTag: LListRemove *** */",
       "tags": {
         "sig": 2,
-        "remember": 4,
-        "setelem": 5,
-        "setnext": 7,
-        "listSize": 8,
-        "return": 9
+        "remember": 5,
+        "setelem": 6,
+        "setnext": 8,
+        "listSize": 10,
+        "return": 11
       }
     }]
 

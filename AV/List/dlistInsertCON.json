@@ -41,6 +41,20 @@
         "size": 5,
         "return": 6
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/DList.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: DListInsert *** */",
+      "endBefore": "# /* *** ODSAendTag: DListInsert *** */",
+      "tags": {
+        "sig": 1,
+        "new": 2,
+        "setNext": 3,
+        "setElem": 4,
+        "size": 5,
+        "return": 6
+      }
     }]
   }
 }

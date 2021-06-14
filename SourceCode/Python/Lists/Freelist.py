@@ -1,17 +1,13 @@
-# /* *** ODSATag: LList *** */
-from Link import *
+# Linked list implementation that uses a Freelist
+from Freelink import *
 from List import *
-# Linked list implementation
-# /* *** ODSATag: LListVars *** */
 class LList(List):
     # Class variables
     #   Link head           // Pointer to list header
     #   Link tail           // Pointer to last element
     #   Link curr           // Access to current element
     #   int listSize        // Size of list
-# /* *** ODSAendTag: LListVars *** */
 
-# /* *** ODSATag: LListCons *** */
     # Constructor
     def __init__(self, size=None):   # Ignore size 
         self.curr = self.tail = Link(None)  # Create trailer
@@ -20,13 +16,16 @@ class LList(List):
 
     # Remove all elements
     def clear(self):
-        self.curr = self.tail = Link(None)  # Create trailer
-        self.head = Link(self.tail)         # Create header
+        while self.head != None:
+            temp = self.head.next()
+            self.head.release()
+            self.head = temp
+        self.curr = self.tail = Link.get(None, None)  # Create trailer
+        self.head = Link.get(self.tail, None)         # Create header
         self.listSize = 0
-# /* *** ODSAendTag: LListCons *** */
 
     def __eq__(self, other):
-        return (isinstance(other, LList) and self.curr == other.curr and 
+        return (isinstance(other, Freelist) and self.curr == other.curr and 
                 self.head == other.head and self.tail == other.tail and self.listSize == other.listSize)
 
     def __repr__(self):
@@ -40,7 +39,7 @@ class LList(List):
             temp = temp.next()
             i += 1
         out += "| "
-        #i = self.currPos()
+        i = self.currPos()
         while i < self.listSize:
             out += str(temp.element())
             out += " "
@@ -48,39 +47,37 @@ class LList(List):
             i += 1
         out += ">"
         return out
-# /* *** ODSATag: LListInsert *** */
+# /* *** ODSATag: Freelist *** */
     # Insert "it" at current position
     def insert(self, it):   
-        self.curr.setNext(Link(self.curr.next(), self.curr.element()))
+        self.curr.setNext(Link.get(self.curr.next(), self.curr.element()))
         self.curr.setElement(it)
         if self.tail == self.curr:
             self.tail = self.curr.next()    # New tail
         self.listSize += 1
         return True
-# /* *** ODSAendTag: LListInsert *** */
 
     # Append "it" to list
     def append(self, it):
-        self.tail.setNext(Link(None))
+        self.tail.setNext(Link.get(None, None))
         self.tail.setElement(it)
         self.tail = self.tail.next()
         self.listSize += 1
         return True
 
-# /* *** ODSATag: LListRemove *** */
     # Remove and return current element
     def remove(self):
         if self.curr == self.tail:  # Nothing to remove
-            raise IndexError("remove() in LList has current of " + str(self.curr.element()) + " and size of " + str(self.listSize) + " that is not a valid element")
-        it = self.curr.element()     # Remember Value
+            return None
+        it = curr.element()     # Remember Value
         self.curr.setElement(self.curr.next().element())    # Pull forward the next element
         if self.curr.next() == self.tail:
             self.tail = self.curr   # Removed last, move tail
-        #else:
-        self.curr.setNext(self.curr.next().next())  # Point around unneeded link
-        self.listSize -= 1  # Decrement element count
+        tempptr = self.curr.next()  # Remember the link
+        self.curr.setNext(self.curr.next().next())  # Point around unneded link
+        tempptr.release()   # Release the link
+        self.listSize += 1  # Decrement element count
         return it   # Return value
-# /* *** ODSAendTag: LListRemove *** */
 
     # Set to front
     def moveToStart(self):
@@ -90,7 +87,6 @@ class LList(List):
     def moveToEnd(self):
         self.curr = self.tail   # Set curr at list end
 
-# /* *** ODSATag: LListPrev *** */
     # Move curr one step left; no change if now at front
     def prev(self):
         if self.head.next() == self.curr:   # No previous element
@@ -100,14 +96,11 @@ class LList(List):
         while temp.next() != self.curr:
             temp = temp.next()
         self.curr = temp
-# /* *** ODSAendTag: LListPrev *** */
-
-# /* *** ODSATag: LListNext *** */
+    
     # Move curr one step right; no change if now at end
     def next(self):
         if self.curr != self.tail:
             self.curr = self.curr.next()
-# /* *** ODSAendTag: LListNext *** */
 
     # Return list size
     def length(self):
@@ -122,7 +115,6 @@ class LList(List):
             i += 1
         return i
 
-# /* *** ODSATag: LListPos *** */
     # Move down list to "pos" position
     def moveToPos(self, pos):
         if pos < 0 or pos > self.listSize:
@@ -132,20 +124,4 @@ class LList(List):
         while i < pos:
             self.curr = self.curr.next()
             i += 1
-        return True
-# /* *** ODSAendTag: LListPos *** */
-
-    # Return true if current position is at end of the list
-    def isAtEnd(self):
-        return self.curr == self.tail
-
-    # Return the current element
-    def getValue(self):
-        if self.currPos() < 0 or self.currPos() >= self.listSize: # No current element
-            raise IndexError("getvalue() in AList has a current of " + str(self.curr.element()) + " and size of " + str(self.listSize) + " that is not a valid element")
-        return self.curr.element()
-
-    # Check if the list is empty
-    def isEmpty(self):
-        return self.listSize == 0
-# /* *** ODSAendTag: LList *** */
+# /* *** ODSAendTag: Freelist *** */

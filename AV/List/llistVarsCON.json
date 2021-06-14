@@ -44,10 +44,10 @@
       "endBefore": "# /* *** ODSAendTag: LListVars *** */",
       "tags": {
         "sig": 1,
-        "head": 2,
-        "tail": 3,
-        "curr": 4,
-        "listSize": 5
+        "head": 3,
+        "tail": 4,
+        "curr": 5,
+        "listSize": 6
       }
     }]
 

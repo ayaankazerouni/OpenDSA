@@ -55,8 +55,8 @@
         "sig": 2,
         "setnext": 3,
         "setelem": 4,
-        "tail": 5,
-        "listSize": 6
+        "tail": 6,
+        "listSize": 7
       }
     }]
 

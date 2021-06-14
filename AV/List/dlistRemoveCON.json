@@ -44,6 +44,22 @@
         "size": 7,
         "return": 8
       }
+    }],
+    "python": [{
+      "url": "../../../SourceCode/Python/Lists/DList.py",
+      "lineNumbers": false,
+      "startAfter": "# /* *** ODSATag: DListRemove *** */",
+      "endBefore": "# /* *** ODSAendTag: DListRemove *** */",
+      "tags": {
+        "sig": 1,
+        "tailcheck": 2,
+        "elem": 4,
+        "setNext": 5,
+        "setPrev": 6,
+        "curr": 7,
+        "size": 8,
+        "return": 9
+      }
     }]
   }
 }
